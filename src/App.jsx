@@ -6,12 +6,12 @@ import Modal from './components/Modal';
 import { useGlobalContext } from './context';
 export default function App() {
 
-  const {showModal} = useGlobalContext()
+  const {showModal, favorites} = useGlobalContext()
   
   return (
     <main>
       <Search/>
-      {/*<Favourites />*/}
+      {favorites.length > 0 && <Favourites />}
       <Meals />
       {showModal && <Modal />}
     </main>
